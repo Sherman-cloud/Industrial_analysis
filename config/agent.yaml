@@ -1,0 +1,46 @@
+agents:
+
+  - name: MacroAgent
+    description: "分析宏观经济数据（GDP, CPI）与行业趋势的关系。"
+    model: ${main_llm}
+    tools: ["query_data", "analyze_correlation", "generate_chart"]
+    inputs: ["gdp数据.csv", "cpi数据.csv"]
+    outputs: ["macro_summary", "macro_corr_matrix"]
+    output_schema:
+      macro_summary: "string"
+      macro_corr_matrix: "dict"
+
+  - name: FinanceAgent
+    description: "负责新能源汽车行业的财务指标分析。"
+    model: ${main_llm}
+    tools: ["query_data", "compute_indicators", "generate_chart"]
+    inputs: ["新能源行业数据（2000-2023年）.csv", "23汽车A股上市公司财务指标（269家，876个指标）.csv"]
+    outputs: ["finance_summary", "key_metrics"]
+
+  - name: MarketAgent
+    description: "分析行业产销趋势、市场结构与渗透率。"
+    model: ${main_llm}
+    tools: ["query_data", "compute_indicators", "generate_chart"]
+    inputs: ["2新能源汽车分厂商产销(207家厂商，201812-202210月度数据).csv", "充电设施数量.csv"]
+    outputs: ["market_trend_summary", "penetration_rate"]
+
+  - name: PolicyAgent
+    description: "结合宏观与行业数据，评估政策与市场信号的影响。"
+    model: ${main_llm}
+    tools: ["query_data", "analyze_correlation"]
+    inputs: ["gdp数据.csv", "新能源行业数据（2000-2023年）.csv"]
+    outputs: ["policy_insight", "impact_analysis"]
+
+  - name: ForecastAgent
+    description: "根据历史趋势预测下一期市场走势。"
+    model: ${main_llm}
+    tools: ["query_data", "predict_time_series", "generate_chart"]
+    inputs: ["新能源行业数据（2000-2023年）.csv", "2新能源汽车分厂商产销(207家厂商，201812-202210月度数据).csv"]
+    outputs: ["forecast_summary", "forecast_chart"]
+
+  - name: ReportAgent
+    description: "整合所有子智能体的输出，生成最终Markdown报告。"
+    model: ${main_llm}
+    tools: ["generate_report"]
+    inputs_from_agents: ["MacroAgent", "FinanceAgent", "MarketAgent", "PolicyAgent", "ForecastAgent"]
+    output_format: "markdown"

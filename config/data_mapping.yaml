@@ -1,0 +1,112 @@
+# 数据文件映射配置
+# 将逻辑文件名映射到实际文件名
+
+# 宏观经济数据
+宏观经济数据.csv:
+  actual_file: "gdp.csv"
+  description: "国内生产总值数据"
+
+# 汽车行业上市公司数据
+汽车行业上市公司数据.csv:
+  actual_file: "23汽车A股上市公司基本信息.csv"
+  description: "汽车行业上市公司基本信息"
+
+# 新能源汽车产销数据
+新能源汽车产销数据.csv:
+  actual_file: "2新能源汽车分厂商产销(207家厂商，201812-202210月度数据).csv"
+  description: "新能源汽车分厂商产销数据"
+
+# 充电基础设施数据
+充电基础设施数据.csv:
+  actual_file: "10国内充电设施数量（省份，月，201602-202302）.csv"
+  description: "国内充电设施数据"
+
+# 电池技术数据
+电池技术数据.csv:
+  actual_file: "动力电池装机量(2022年).csv"
+  description: "动力电池装机量数据"
+
+# 政策法规数据
+政策法规数据.csv:
+  actual_file: "政策法规.txt"
+  description: "新能源汽车相关政策法规"
+
+macro_economic_data:
+  actual_file: "gdp.csv"
+  description: "国内生产总值相关数据"
+  columns:
+    - "季度"
+    - "国内生产总值"
+    - "第一产业增加值"
+    - "第二产业增加值"
+    - "第三产业增加值"
+
+cpi_data:
+  actual_file: "cpi.csv"
+  description: "居民消费价格指数数据"
+  columns:
+    - "统计期间"
+    - "数据频率"
+    - "CPI当月同比"
+    - "CPI环比"
+
+ppi_data:
+  actual_file: "ppi.csv"
+  description: "工业生产者出厂价格指数数据"
+  columns:
+    - "统计期间"
+    - "数据频率"
+    - "PPI当月同比"
+    - "PPI环比"
+
+# 行业数据
+industry_overview:
+  actual_file: "新能源行业数据（2000-2023年）.csv"
+  description: "新能源行业上市公司财务和经营数据"
+  
+company_basic_info:
+  actual_file: "23汽车A股上市公司基本信息（269家，63个指标）.csv"
+  description: "汽车行业A股上市公司基本信息"
+
+company_financial_summary:
+  actual_file: "24汽车A股上市公司财务摘要（269家，10个指标，2006-2022）.csv"
+  description: "汽车A股上市公司财务摘要"
+
+company_operation_capacity:
+  actual_file: "25汽车A股上市公司营运能力指标（269家，9个指标，2006-2022）.csv"
+  description: "汽车A股上市公司营运能力指标"
+
+company_solvency:
+  actual_file: "26汽车A股上市公司偿债能力指标（269家，12个指标，2006-2022）.csv"
+  description: "汽车A股上市公司偿债能力指标"
+
+company_profitability:
+  actual_file: "28汽车A股上市公司盈利能力指标（269家，6个指标，2006-2022）.csv"
+  description: "汽车A股上市公司盈利能力指标"
+
+company_rd_investment:
+  actual_file: "29汽车A股上市公司研发投入（269家，9个指标，2006-2022）.csv"
+  description: "汽车A股上市公司研发投入"
+
+# 市场数据
+production_sales_data:
+  actual_file: "2新能源汽车分厂商产销(207家厂商，201812-202210月度数据).csv"
+  description: "新能源汽车分厂商产销数据"
+
+brand_production_sales:
+  actual_file: "副本1汽车分品牌产销(95家车企，768个车型，201512-202210月度数据).csv"
+  description: "汽车分品牌产销数据"
+
+# 基础设施数据
+charging_infrastructure:
+  actual_file: "10国内充电设施数量（省份，月，201602-202302）.csv"
+  description: "国内充电设施数据"
+
+# 其他数据
+listed_company_basic_info:
+  actual_file: "上市公司基本信息.csv"
+  description: "上市公司基本信息"
+
+listed_company_financial:
+  actual_file: "上市公司财务年度合并90-24(1).csv"
+  description: "上市公司财务年度合并"

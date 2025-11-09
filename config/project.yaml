@@ -1,0 +1,42 @@
+project:
+  name: "新能源汽车行业分析系统"
+  version: "1.0.0"
+  mode: "multi-agent"
+  description: |
+    本项目旨在构建一个基于 LangChain 框架 + 硅基流动模型的多智能体系统，
+    自动完成新能源汽车行业的多维数据分析、趋势判断、报告生成。
+    每个智能体负责一个板块（宏观经济 / 财务表现 / 市场结构 / 政策评估 / 趋势预测），
+    最终由汇总智能体整合输出完整报告。
+
+  author: "Fynn"
+  environment: "python>=3.10"
+  framework: "LangChain + SiliconFlow"
+  run_mode: "local_dev"
+  output_format: ["markdown", "json", "chart"]
+
+  api_keys_required:
+    - SILICONFLOW_API_KEY
+
+  llm_models:
+    main_llm:
+      name: "SiliconFlow-chat"
+      env_key: "SILICONFLOW_API_KEY"
+      role: "核心智能体推理与报告生成"
+      model_name: "deepseek-ai/DeepSeek-R1"
+      base_url: "https://api.siliconflow.cn/v1"
+
+  data_sources:
+    - path: "../数据/gdp数据.csv"
+      purpose: "宏观经济背景分析"
+    - path: "../数据/cpi数据.csv"
+      purpose: "物价与消费趋势"
+    - path: "../数据/新能源行业数据（2000-2023年）.csv"
+      purpose: "行业财务表现分析"
+    - path: "../数据/2新能源汽车分厂商产销(207家厂商，201812-202210月度数据).csv"
+      purpose: "产销趋势"
+    - path: "../数据/充电设施数量.csv"
+      purpose: "基础设施发展"
+    - path: "../数据/23汽车A股上市公司基本信息（269家，63个指标）.csv"
+      purpose: "上市公司基本信息"
+    - path: "../数据/23汽车A股上市公司财务指标（269家，876个指标）.csv"
+      purpose: "上市公司财务指标"

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  new-energy-analysis:
+    build: .
+    container_name: new-energy-analysis
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    
+  # 可选：添加数据库服务
+  # postgres:
+  #   image: postgres:13
+  #   container_name: new-energy-db
+  #   environment:
+  #     POSTGRES_DB: new_energy_analysis
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: unless-stopped
+
+# volumes:
+#   postgres_data:

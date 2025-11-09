@@ -1,0 +1,11 @@
+Quarter [季度] - YYYY-MM
+Gdp [国内生产总值] - 
+Primarygdp [国内生产总值-第一产业] - 
+Secondarygdp [国内生产总值-第二产业] - 
+Tertiartgdp [国内生产总值-第三产业] - 
+Gdpcurrperiod [国内生产总值(比上年同期增长)(%)] - 
+Primarygdpyoyp [国内生产总值-第一产业(比上年同期增长)(%)] - 
+Secondgdpyoyp [国内生产总值-第二产业(比上年同期增长)(%)] - 
+Tertiartgdpyoyp [国内生产总值-第三产业(比上年同期增长)(%)] - 
+Gdpmom [国内生产总值环比增速(%)] - 
+Status2 [数据性质] - P-Preliminary，F-Forecast，R-Revision
